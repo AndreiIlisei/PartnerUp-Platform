@@ -1,6 +1,6 @@
 import React from 'react';
 import './Form.css';
-import rocket from './img-3.svg';
+import rocket from '../../images/img-3.svg';
 
 const FormSuccess = () => {
     return (
