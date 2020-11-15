@@ -10,6 +10,7 @@ import {
   homeObjThree
 } from '../components/InfoSection/Data';
 import Services from '../components/Services';
+import SignIn from '../components/SignIn';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ function Home() {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />

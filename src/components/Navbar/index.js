@@ -101,7 +101,7 @@ const Navbar = ({ toggle }) => {
             </NavMenu>
             <NavBtn>
             <NavBtnLink onClick={() => setIsOpen(true)}>Sign In</NavBtnLink>
-              <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+              <Modal open={isOpen} onClose={() => setIsOpen(false)}> 
                 <SignIn />
               </Modal>
             </NavBtn>
@@ -114,9 +114,3 @@ const Navbar = ({ toggle }) => {
 
 export default Navbar;
 
-
-
-
-{/* <NavBtn>
-  <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-</NavBtn> */}

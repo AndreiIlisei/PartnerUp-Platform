@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import fire from "../../firebase";
 import Login from "./Login";
-import Navbar from '../Navbar';
 import HomePage from '../../pages/homepage';
+import { useHistory } from "react-router-dom";
+
 
 const SignIn = () => {
     const [user, setUser] = useState('');
@@ -11,6 +12,7 @@ const SignIn = () => {
     const [emailError, setEmailError] = useState('');
     const [passwordEror, setPasswordError] = useState('');
     const [hasAccount, setHasAccount] = useState(false);
+    const history = useHistory();
   
     const clearInputs = () => {
         setEmail('');
@@ -82,7 +84,7 @@ const SignIn = () => {
     return (
         <div className="logForm">
             {user ? (
-                <HomePage handleLogout={handleLogout} />
+                history.push("/homepage")
             ) : (  
             <Login
                 email={email}
