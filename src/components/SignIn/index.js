@@ -84,7 +84,7 @@ const SignIn = () => {
     return (
         <div className="logForm">
             {user ? (
-                history.push("/homepage")
+                history.push("/homepage") 
             ) : (  
             <Login
                 email={email}

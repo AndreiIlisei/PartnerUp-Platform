@@ -1,6 +1,19 @@
 import React from "react";
+import fire from "../firebase";
+import { useHistory } from "react-router-dom";
 
-const HomePage = ({ handleLogout }) => {
+
+
+const HomePage = () => {
+
+    const history = useHistory();
+  
+
+    const handleLogout = () => {
+        fire.auth().signOut();
+        history.push("/") 
+    };
+
     return (
         <section className="homePage">
             <nav>
