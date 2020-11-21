@@ -60,9 +60,10 @@ button {
   outline: none;
   font-size: 19px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.075);
-  color: black;
+  background: rgba(22, 4, 4, 0.075);
+  color: black; 
   letter-spacing: 1px;
+  border-radius: 1rem;
 }
 
 .login .loginContainer .btnContainer {

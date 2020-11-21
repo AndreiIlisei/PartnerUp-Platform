@@ -9,7 +9,9 @@ import {
   SNavbar3,
   SNavbar4,
   SPartner,
+  Cards,
 } from "../styles/Shomepage";
+import Card from "react-bootstrap/Card";
 
 const HomePage = () => {
   const history = useHistory();
@@ -52,8 +54,45 @@ const HomePage = () => {
       </SHeader>
       <SPartner>
         <h2>Find Your Partner</h2>
-        <h3>You can browse through the list of other thesis writer and find your perfect match</h3>
+        <h3>
+          You can browse through the list of other thesis writer and find your
+          perfect match
+        </h3>
       </SPartner>
+      <Cards>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            src="https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          />
+          <Card.Body>
+            <Card.Title>Marie</Card.Title>
+            <Card.Text>
+              BSC in International Business, CBS, 20yrs old, Copenhagen
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          />
+          <Card.Body>
+            <Card.Title>Max</Card.Title>
+            <Card.Text>BSC in Finance, CBS, 25yrs old, Copenhagen</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            src="https://images.unsplash.com/photo-1581992652564-44c42f5ad3ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          />
+          <Card.Body>
+            <Card.Title>Fiona</Card.Title>
+            <Card.Text>MSC in EBusiness, CBS, 24yrs old, Copenhagen</Card.Text>
+          </Card.Body>
+        </Card>
+      </Cards>
     </SHomePage>
   );
 };
