@@ -1,14 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-
+/* 
 h2{
     font-family: sans-serif;
 font-style: normal;
 font-weight: normal;
-
+font-size:13px;
 align-items: center;
-}
+} */
 
  button {
      all: unset;
@@ -17,5 +17,8 @@ align-items: center;
     padding: 0;
     text-decoration:none;
   }
- 
+  img {
+  max-width: 100%;
+  text-align: center;
+}
 `;
