@@ -38,9 +38,9 @@ button {
   justify-content: center;
   background: radial-gradient(
     ellipse at left bottom,
-    rgb(19, 187, 55) 0%,
-    rgba(56, 209, 82, 0.9) 59%,
-    rgba(8, 173, 30, 0.9) 100%
+    rgb(180, 139, 192) 0%,
+    rgba(180, 139, 192) 59%,
+    rgba(180, 139, 192) 100%
   );
   /* box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8); */
 }

@@ -45,17 +45,17 @@ export const SNavbar = styled.div`
     padding: 0.1em;
     border-radius: 10px;
     border-radius: 2px solid;
-    background-color: #18bd76;
+    background-color: #c9cbff;
     font-family: sans-serif;
     font-style: normal;
   }
 `;
 export const SPartner = styled.div`
-  color: #18bd76;
+  color: black;
   align-items: center;
   text-align: center;
   font-size: 0.8em;
-  margin-bottom: 1em;
+  margin-bottom: 5em;
   margin-top: 1em;
 `;
 
@@ -69,6 +69,7 @@ export const Cards = styled.div`
   margin-right: 6em;
   max-width: 100%;
   margin-bottom: 2em;
+  
 
   .btn-primary {
     text-decoration: none;
