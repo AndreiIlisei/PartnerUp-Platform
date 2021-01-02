@@ -3,14 +3,12 @@ export const homeObjOne = {
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: 'PartnerUp',
   headline: 'Unlimited access to a pool of students with similar interests 🤓',
   description:
     'Get access to our exclusive app and excell at your Thesis',
   buttonLabel: 'Get Started',
   imgStart: false,
-  img: require('../../images/students.jpeg'),
-  alt: 'Car',
+  // img: require('../../images/students.jpeg'),
   dark: true,
   primary: true,
   darkText: false

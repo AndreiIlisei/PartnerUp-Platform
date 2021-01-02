@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../ButtonElements';
 
-import Video from '../../videos/video.mp4';
+import Video from '../../Videos/Video.mp4';
 import {
   HeroContainer,
   HeroBg,
@@ -22,10 +22,10 @@ function HeroSection() {
   };
   return (
     <HeroContainer id='home'>
-      {/* <HeroBg>
-        <VideoBg playsInline autoPlay loop muted src={Video} type='videonew.webm/webm' />
+      <HeroBg>
+        <VideoBg playsInline autoPlay loop muted src={Video} type='Video.mp4' />
       </HeroBg>
-       */}
+      
       <HeroContent>
         <HeroH1>Partner Up</HeroH1>
         <HeroP>

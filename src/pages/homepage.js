@@ -2,7 +2,7 @@ import React from "react";
 import fire from "../firebase";
 import { useHistory } from "react-router-dom";
 import { LogOutButton, SHeader } from "../styles/Shomepage";
-import { SNavbar, SHomePage, SLogo } from "../styles/Shomepage";
+import { SNavbar, SHomePage, SLogo, SProfileButton } from "../styles/Shomepage";
 import { SPartner, Cards } from "../styles/Shomepage";
 import Card from "react-bootstrap/Card";
 import Logo from "../images/Logo.png";
@@ -32,7 +32,7 @@ history.push("/UserProfile");
           <h2 className="navbarStyle">How it Works</h2>
           <h2 className="navbarStyle">About Us</h2>
           <h2 className="navbarStyle">Blog</h2>
-          <button className="navbarStyle" onClick={handleProfile}>
+          <button className="SProfileButton" onClick={handleProfile}>
             Profile
           </button>
           <button className="logoutBtn" onClick={handleLogout}>
@@ -52,7 +52,7 @@ history.push("/UserProfile");
           match
         </h3>
       </SPartner>
-      <Cards>
+      <Cards className="CardsStyle">
         <Row className="Show-Grid">
           <Col md={4}>
             <Card style={{ width: "18rem" }}>
@@ -109,10 +109,10 @@ history.push("/UserProfile");
             <Card style={{ width: "18rem" }}>
               <Card.Img
                 variant="top"
-                src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+                src="https://images.unsplash.com/photo-1545696968-1a5245650b36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1917&q=80"
               />
               <Card.Body>
-                <Card.Title>Max</Card.Title>
+                <Card.Title>Aron</Card.Title>
                 <Card.Text>
                   BSC in Finance, CBS, 25yrs old, Copenhagen
                 </Card.Text>
@@ -126,12 +126,29 @@ history.push("/UserProfile");
             <Card style={{ width: "18rem" }}>
               <Card.Img
                 variant="top"
-                src="https://images.pexels.com/photos/3779760/pexels-photo-3779760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                src="https://images.unsplash.com/photo-1517842536804-bf6629e2c291?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
               />
               <Card.Body>
                 <Card.Title>Sofia</Card.Title>
                 <Card.Text>
                   BSC in Marketing, CBS, 25yrs old, Copenhagen
+                </Card.Text>
+                <a href="#" className="btn-primary">
+                  See More
+                </a>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4}>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img
+                variant="top"
+                src="https://images.unsplash.com/photo-1604820649462-62dbda149c73?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              />
+              <Card.Body>
+                <Card.Title>Marek</Card.Title>
+                <Card.Text>
+                  BSC in Information Systems, CBS, 23yrs old, Copenhagen
                 </Card.Text>
                 <a href="#" className="btn-primary">
                   See More
