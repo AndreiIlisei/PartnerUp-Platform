@@ -1,19 +1,21 @@
+
+
 export const homeObjOne = {
-  id: 'about',
-  lightBg: false,
-  lightText: true,
+  id: "about",
+  lightBg: true,
+  lightText: false,
   lightTextDesc: true,
-  headline: 'Unlimited access to a pool of students with similar interests 🤓',
-  description:
-    'Get access to our exclusive app and excell at your Thesis',
-  buttonLabel: 'Get Started',
+  headline: "Unlimited access to a pool of students with similar interests 🤓",
+  description: "Get access to our exclusive app and excell at your Thesis",
+  buttonLabel: "Get Started",
   imgStart: false,
-  // img: require('../../images/students.jpeg'),
+  img:
+    "https://image.freepik.com/free-vector/goal-achievement-career-promotion-school-graduation-educational-trajectory-educational-capital-strategy-determine-your-educational-way-concept-pinkish-coral-bluevector-isolated-illustration_335657-1255.jpg",
   dark: true,
   primary: true,
-  darkText: false
+  darkText: true,
 };
-
+/* 
 export const homeObjTwo = {
   id: 'discover',
   lightBg: true,
@@ -31,7 +33,7 @@ export const homeObjTwo = {
   primary: false,
   darkText: true
 };
-
+ */
 export const homeObjThree = {
   id: 'signup',
   lightBg: true,

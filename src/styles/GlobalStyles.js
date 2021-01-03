@@ -16,6 +16,9 @@ align-items: center;
     margin: 0;
     padding: 0;
     text-decoration:none;
+     box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
   }
   img {
   max-width: 100%;

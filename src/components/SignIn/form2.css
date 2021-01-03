@@ -4,7 +4,7 @@
   padding: 0;
   font-family: "Nunito", sans-serif;
 }
-/* 
+
 button {
   border: none;
   outline: none;
@@ -16,7 +16,7 @@ button {
   background: black;
   cursor: pointer;
   border-radius: 2rem;
-} */
+}
 
 .login {
   width: 100%;
@@ -120,10 +120,9 @@ button {
 .hero nav h2 {
   color: #fff;
 }
-/* 
+
 .hero nav button {
   width: 86px;
   padding: 8px 0;
   background: #3a2b58;
 }
- */

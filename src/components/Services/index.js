@@ -1,7 +1,7 @@
-import React from 'react';
-import Icon1 from '../../images/svg-1.svg';
-import Icon2 from '../../images/svg-3.svg';
-import Icon3 from '../../images/svg-5.svg';
+import React from "react";
+import Icon1 from "../../images/svg-1.svg";
+import Icon2 from "../../images/svg-3.svg";
+import Icon3 from "../../images/svg-5.svg";
 import {
   ServicesContainer,
   ServicesH1,
@@ -9,34 +9,25 @@ import {
   ServicesCard,
   ServicesIcon,
   ServicesH2,
-  ServicesP
-} from './ServicesElements';
+  ServicesP,
+} from "./ServicesElements";
 
 const Services = () => {
   return (
-    <ServicesContainer id='services'>
-      <ServicesH1>Our Services</ServicesH1>
+    <ServicesContainer id="services">
+      <ServicesH1>How it works</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
-          <ServicesIcon src={Icon1} />
-          <ServicesH2>Reduce Expenses</ServicesH2>
-          <ServicesP>
-            We help reduce your fees and increase your overall revenue.
-          </ServicesP>
+          <ServicesIcon src="https://image.freepik.com/free-vector/man-with-laptop-studying-working-concept_113065-167.jpg" />
+          <ServicesH2> Find the perfect match.</ServicesH2>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={Icon2} />
-          <ServicesH2>Virtual Offices</ServicesH2>
-          <ServicesP>
-            You can access our platform online anywhere in the world.
-          </ServicesP>
+          <ServicesIcon src="https://image.freepik.com/free-vector/girl-writing-journal-diary_74855-7408.jpg" />
+          <ServicesH2>Based on Preference & Interest</ServicesH2>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={Icon3} />
-          <ServicesH2>Premium Benefits</ServicesH2>
-          <ServicesP>
-            Unlock our special membership card that returns 5% cash back.
-          </ServicesP>
+          <ServicesIcon src="https://image.freepik.com/free-vector/flat-university-concept-background_23-2148191433.jpg" />
+          <ServicesH2>Excell at your Thesis!</ServicesH2>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
