@@ -15,6 +15,8 @@ import {
 } from './NavbarElements';
 import SignIn from '../SignIn/index';
 import Modal from '../SignIn/Modal';
+import Login from '../SignIn/login';
+import Signup from '../SignIn/signup';
 
 
 const Navbar = ({ toggle }) => {
@@ -102,7 +104,7 @@ const Navbar = ({ toggle }) => {
             <NavBtn>
             <NavBtnLink onClick={() => setIsOpen(true)}>Sign In</NavBtnLink>
               <Modal open={isOpen} onClose={() => setIsOpen(false)}> 
-                <SignIn />
+                <Login/>
               </Modal>
             </NavBtn>
           </NavbarContainer>

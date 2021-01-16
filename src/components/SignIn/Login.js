@@ -1,44 +1,125 @@
-import React from 'react';
-import './form2.css';
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { Typography, TextField } from "@material-ui/core";
+import "./form.css";
+import { Link } from 'react-router-dom';
 
-const Login = (props) => {
-    const{ email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
+// Redux stuff
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/actions/userActions';
+import { propTypes } from "react-bootstrap/esm/Image";
+
+
+const styles = {
+    customError: {
+        color: 'red',
+        fontSize: '0.8rem'
+    }
+}
+
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      errors: {},
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.UI.errors) {
+      this.setState({ errors: nextProps.UI.errors });
+    }
+  } 
+
+    handleSubmit = (event) => {
+    event.preventDefault();
+    const userData = { 
+      email: this.state.email,
+      password: this.state.password,
+    };
+    this.props.loginUser(userData, this.props.history);
+  };
+  
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  render() {
+    const { classes, UI: { loading }} = this.props;
+    const { errors } = this.state;
 
     return (
-      <section className="login">
-          <div className="loginContainer">
-            <label>Username</label>
-            <input
-            type="text"
-            autoFocusrequired
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+      <div className="form-container">
+        <form className="form" onSubmit={this.handleSubmit} noValidate>
+          <div className="form-inputs">
+            <label className="form-label"> Email </label>
+            <TextField
+              id="email"
+              type="email"
+              name="email"
+              className="form-input"
+              placeholder="Enter your email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              helperText={errors.email}
+              error={errors.email ? true : false}
             />
-            <p className="errorMsg">{emailError}</p>
-            <label>Password</label>
-            <input type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            />
-            <p className="errorMsg">{passwordError}</p>
-            <div className="btnContainer">
-                {hasAccount ? (
-                    <>
-                    <button onClick={handleLogin}> Sign in </button>
-                    <p>Dont have an account? <span onClick={() => setHasAccount(!hasAccount)}> Sign Up </span></p>
-                    </>
-                ) : (
-                    <>
-                    <button onClick={handleSignup}> Sign Up </button>
-                    <p>Have an account? <span onClick={() => setHasAccount(!hasAccount)}> Sign In </span></p>
-                    </>  
-                )} 
-            </div>
           </div>
-      </section>
+
+          <div className="form-inputs">
+            <label className="form-label"> Password </label>
+            <TextField
+              id="password"
+              type="password"
+              name="password"
+              className="form-input"
+              placeholder="Enter your password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              helperText={errors.password}
+              error={errors.password ? true : false}
+            />
+          </div>
+
+            {errors.general && (
+                <Typography>
+                    {errors.general}
+                </Typography>
+
+            )}
+          <button className="form-input-btn" type="submit">
+            {" "}
+            Login{" "}
+          </button>
+          <span className="form-input-login">
+            You dont have an account? Register <a href="#"> here </a>{" "}
+            {/*  Here should the register tooggle be */}
+          </span>
+        </form>
+      </div>
     );
+  }
+}
+
+Login.propTypes = {
+  classes: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  UI:  PropTypes.object.isRequired
 };
 
+const mapStateToProps = (state) => ({
+  user: state.user,
+  UI: state.UI
+});
 
-export default Login;
+const mapActionsToProps = {
+  loginUser
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Login)
