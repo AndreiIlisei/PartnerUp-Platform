@@ -15,7 +15,7 @@ import {
 } from './NavbarElements';
 import SignIn from '../SignIn/index';
 import Modal from '../SignIn/Modal';
-import Login from '../SignIn/login';
+import Login from '../SignIn/Login';
 import Signup from '../SignIn/signup';
 
 

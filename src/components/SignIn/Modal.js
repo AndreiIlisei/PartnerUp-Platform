@@ -21,13 +21,9 @@ const OVERLAY_STYLES = {
 };
 
 function Modal({ open, children, onClose }) {
-<<<<<<< Updated upstream
-  if (!open) return null;
-=======
     if (!open) return null 
 
     window.location.href = "/login"
->>>>>>> Stashed changes
 
   return ReactDom.createPortal(
     <>
@@ -37,17 +33,10 @@ function Modal({ open, children, onClose }) {
           <span onClick={onClose}>X </span>
           {children}
         </div>
-<<<<<<< Updated upstream
       </div>
     </>,
     document.getElementById("portal")
   );
 }
-=======
-        </>,
-        document.getElementById('portal')
-    )
-    }
->>>>>>> Stashed changes
 
 export default Modal;

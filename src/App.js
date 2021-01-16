@@ -1,26 +1,20 @@
-<<<<<<< Updated upstream
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages';
-import HomePage from './pages/homepage';
-import handleProfile from './pages/UserProfile';
-=======
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import jwtDecode from "jwt-decode";
 import axios from "axios";
->>>>>>> Stashed changes
+
 
 // Pages
-import Home from "./pages";
+import Home from "./pages/index";
 import HomePage from "./pages/homepage";
-import Modal from "./components/SignIn/Modal";
+import handleProfile from './pages/UserProfile';
+
 
 // Components
 import Signup from "./components/SignIn/signup";
-import Login from "./components/SignIn/login";
+import Login from "./components/SignIn/Login";
 import AuthRoute from "./util/AuthRoute";
 
 //Redux
@@ -45,20 +39,12 @@ if (token) {
 
 function App() {
   return (
-<<<<<<< Updated upstream
-    <Router>
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/homepage" component={HomePage} />
-        <Route path="/UserProfile" component={handleProfile} />
-      </Switch>
-    </Router>
-=======
     <Provider store={store}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} exact />
           <Route exact path="/homepage" component={HomePage} />
+          <Route path="/UserProfile" component={handleProfile} />
           <AuthRoute
             exact
             path="/login"
@@ -72,7 +58,6 @@ function App() {
         </Switch>
       </Router>
     </Provider>
->>>>>>> Stashed changes
   );
 }
 
