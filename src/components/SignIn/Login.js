@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { Typography, TextField } from "@material-ui/core";
 import "./form.css";
-import { Link } from 'react-router-dom';
+
 
 // Redux stuff
 import { connect } from 'react-redux';
@@ -97,8 +97,7 @@ class Login extends Component {
             Login{" "}
           </button>
           <span className="form-input-login">
-            You dont have an account? Register <a href="#"> here </a>{" "}
-            {/*  Here should the register tooggle be */}
+            You dont have an account? Register <a href="localhost:3000/signup"> here </a>{" "}
           </span>
         </form>
       </div>

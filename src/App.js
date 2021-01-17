@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import jwtDecode from "jwt-decode";
 import axios from "axios";
-
 
 // Pages
 import Home from "./pages/index";
 import HomePage from "./pages/homepage";
-import handleProfile from './pages/UserProfile';
-
+import Profile from "./pages/Profile"
 
 // Components
 import Signup from "./components/SignIn/signup";
@@ -44,7 +41,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} exact />
           <Route exact path="/homepage" component={HomePage} />
-          <Route path="/UserProfile" component={handleProfile} />
+          <Route path="/profile" component={Profile} />
           <AuthRoute
             exact
             path="/login"

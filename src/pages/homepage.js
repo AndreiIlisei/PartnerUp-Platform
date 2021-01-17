@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import PropTypes from "prop-types";
 import { LogOutButton, SHeader } from "../styles/Shomepage";
 import { SNavbar, SHomePage, SLogo } from "../styles/Shomepage";
 import {
@@ -8,31 +8,19 @@ import {
 } from "../styles/Shomepage";
 import Card from "react-bootstrap/Card";
 import Logo from "../images/Logo.png";
-import Scream from '../components/Scream.js'
-import Profile from '../components/Profile';
+import { logoutUser } from "../redux/actions/userActions"
+import { connect } from "react-redux";
+
 
 
 class HomePage extends Component {
-  state = {
-      screams: null
-  };
 
-  componentDidMount(){
-      axios.get('/screams')
-          .then(res => {
-              this.setState({
-                  screams: res.data
-              })
-          })
-          .catch(err => console.log(err));
-  };
+  // Log out function
+  handleLogout = () => {
+    this.props.logoutUser();
+  }
 
   render() {
-    let recentScreamsMarkup = this.state.screams ? (
-      this.state.screams.map((scream) => (
-        <Scream key={scream.screamId} scream={scream}/>
-      )) ) : ( <p>Loading..</p> );
-
   return (
     <SHomePage>
       <SHeader>
@@ -41,12 +29,13 @@ class HomePage extends Component {
           <h2 className="navbarStyle">How it Works</h2>
           <h2 className="navbarStyle">About Us</h2>
           <h2 className="navbarStyle">Blog</h2>
-          <h2 className="navbarStyle">Profile</h2>
-          <button className="logoutBtn" >
+          <button onClick={() => (window.location.href = "profile")}> Profile</button>
+          <button
+          className="logoutBtn" 
+          onClick={this.handleLogout}>
             Log Out
           </button>
         </SNavbar>
-        {/* <button onClick={handleLogout}>Log Out</button> */}
         {/* <SearchBarPartner>
                <input  className="inputField" value={search} onChange={this.updateSearch} placeholder="Enter item you need..." />
           <button className="searchBtn" onClick={search}>Search</button>
@@ -58,14 +47,10 @@ class HomePage extends Component {
           Browse through the list of other thesis writer and find your perfect
           match
         </h3>
-        
-        <div> {recentScreamsMarkup} </div>
-      
-     
-        
       </SPartner>
+
+        {/* Cards with the invented profiles mockup */}
       <Cards>
- 
         <Card style={{ width: "18rem" }}>
           <Card.Img
             variant="top"
@@ -134,10 +119,20 @@ class HomePage extends Component {
           </Card.Body>
         </Card>
       </Cards>
-      <Profile/>
     </SHomePage>
   );
 };
 };
 
-export default HomePage;
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapActionsToProps = { logoutUser };
+
+HomePage.propTypes = {
+  logoutUser: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(HomePage);

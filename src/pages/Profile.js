@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import axios from 'axios';
+import Scream from '../components/Scream.js'
 
 //Redux Stuff
 import { connect } from "react-redux";
-import {logoutUser, uploadImage } from "../redux/actions/userActions"
+import { uploadImage } from "../redux/actions/userActions"
 //MUI STUFF
 import Button from "@material-ui/core/Button";
 import MuiLink from "@material-ui/core/Link";
@@ -82,12 +84,30 @@ class Profile extends Component {
     fileInput.click();
   };
 
-  handleLogout = () => {
-    this.props.logoutUser();
-    this.props.history.push("/login");
-  }
+
+
+  // Function so screams will be retreived from FIREBASE
+  state = {
+    screams: null
+};
+
+  componentDidMount(){
+      axios.get('/screams')
+          .then(res => {
+              this.setState({
+                  screams: res.data
+              })
+          })
+          .catch(err => console.log(err));
+  };
 
   render() {
+        // Screams loading and posted
+    let recentScreamsMarkup = this.state.screams ? (
+      this.state.screams.map((scream) => (
+        <Scream key={scream.screamId} scream={scream}/>
+      )) ) : ( <p>Loading..</p> );
+
     const {
       classes,
       user: {
@@ -96,6 +116,7 @@ class Profile extends Component {
         authenticated,
       },
     } = this.props;
+
 
     let profileMarkup = !loading && 
       authenticated && 
@@ -149,12 +170,15 @@ class Profile extends Component {
               <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
           </div>
-          <Tooltip title="Logout" placement="top">
-                <IconButton onClick={this.handleLogout}>
+          <Tooltip title="Go Back" placement="top">
+                <IconButton onClick={() => (window.location.href = "homepage")}>
                    <KeyboardReturn color="primary">
                    </KeyboardReturn>
                 </IconButton>
           </Tooltip>
+          
+              {/* Screams to be see */}
+        <div> {recentScreamsMarkup} </div> 
         </Paper>
     //   ) : (
     //     <Paper className={classes.paper}>
@@ -192,10 +216,9 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-const mapActionsToProps = { logoutUser, uploadImage };
+const mapActionsToProps = { uploadImage };
 
 Profile.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
   uploadImage: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
