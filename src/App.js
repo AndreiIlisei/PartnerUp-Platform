@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 import axios from "axios";
@@ -10,9 +10,11 @@ import HomePage from "./pages/homepage";
 import Profile from "./pages/Profile"
 
 // Components
-import Signup from "./components/SignIn/signup";
-import Login from "./components/SignIn/Login";
+import Signup from "./components/SignIn/Signup1";
+// import Login from "./components/SignIn/Login";
+import Login from "./components/SignIn/Login1";
 import AuthRoute from "./util/AuthRoute";
+// import Schimbare from "./components/SignIn/Switching";
 
 //Redux
 import { Provider } from "react-redux";

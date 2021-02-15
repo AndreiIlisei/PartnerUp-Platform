@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { Typography, TextField } from "@material-ui/core";
 import "./form.css";
 
@@ -8,7 +7,6 @@ import "./form.css";
 // Redux stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../../redux/actions/userActions';
-import { propTypes } from "react-bootstrap/esm/Image";
 
 
 const styles = {

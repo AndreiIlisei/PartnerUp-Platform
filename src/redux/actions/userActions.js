@@ -60,8 +60,18 @@ export const signupUser = (newUserData, history) => (dispatch) => {
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem("FBIdToken");
   delete axios.defaults.headers.common["Authorization"];
-  dispatch({ type: SET_UNAUTHENTICATED });  
-  window.location.href = "http://localhost:3000"
+  dispatch({ type: SET_UNAUTHENTICATED });
+  window.location.href = "http://localhost:3000";
+};
+
+export const editUserDetails = (userDetails) => (dispatch) => {
+  dispatch({ type: LOADING_USER });
+  axios
+    .post("/user", userDetails)
+    .then(() => {
+      dispatch(getUserData());
+    })
+    .catch((err) => console.log(err));
 };
 
 export const uploadImage = (formData) => (dispatch) => {

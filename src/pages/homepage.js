@@ -1,46 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { LogOutButton, SHeader } from "../styles/Shomepage";
-import { SNavbar, SHomePage, SLogo } from "../styles/Shomepage";
-import {
-  SPartner,
-  Cards,
-} from "../styles/Shomepage";
-import Card from "react-bootstrap/Card";
-import Logo from "../images/Logo.png";
+
+// Components/ Styles
+import { SHomePage, SOptions } from "../styles/Shomepage";
+import { SPartner } from "../styles/Shomepage";
+
+
+// Redux Stuff
 import { logoutUser } from "../redux/actions/userActions"
 import { connect } from "react-redux";
 
+// Pages
+import { Database } from "./database";
+import Dropp from "../components/Dropdown/dropDown"
 
 
 class HomePage extends Component {
 
-  // Log out function
-  handleLogout = () => {
-    this.props.logoutUser();
-  }
-
-  render() {
+    render(){
   return (
     <SHomePage>
-      <SHeader>
-          <img src={Logo} className="Logo" alt="BorrowIT-logo" />
-        <SNavbar>
-          <h2 className="navbarStyle">How it Works</h2>
-          <h2 className="navbarStyle">About Us</h2>
-          <h2 className="navbarStyle">Blog</h2>
-          <button onClick={() => (window.location.href = "profile")}> Profile</button>
-          <button
-          className="logoutBtn" 
-          onClick={this.handleLogout}>
-            Log Out
-          </button>
-        </SNavbar>
-        {/* <SearchBarPartner>
-               <input  className="inputField" value={search} onChange={this.updateSearch} placeholder="Enter item you need..." />
-          <button className="searchBtn" onClick={search}>Search</button>
-          </SearchBarPartner> */}
-      </SHeader>
+      <Dropp/>
       <SPartner>
         <h3>Find Your Partner</h3>
         <h3>
@@ -48,91 +28,52 @@ class HomePage extends Component {
           match
         </h3>
       </SPartner>
-
-        {/* Cards with the invented profiles mockup */}
-      <Cards>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          />
-          <Card.Body>
-            <Card.Title>Marie</Card.Title>
-            <Card.Text>
-              BSC in International Business, CBS, 20yrs old, Copenhagen
-            </Card.Text>
-            <a href="#" className="btn-primary">
-              See More
-            </a>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          />
-          <Card.Body>
-            <Card.Title>Max</Card.Title>
-            <Card.Text>BSC in Finance, CBS, 25yrs old, Copenhagen</Card.Text>
-            <a href="#" className="btn-primary">
-              See More
-            </a>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.unsplash.com/photo-1581992652564-44c42f5ad3ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          />
-          <Card.Body>
-            <Card.Title>Fiona</Card.Title>
-            <Card.Text>MSC in EBusiness, CBS, 24yrs old, Copenhagen</Card.Text>
-            <a href="#" className="btn-primary">
-              See More
-            </a>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          />
-          <Card.Body>
-            <Card.Title>Max</Card.Title>
-            <Card.Text>BSC in Finance, CBS, 25yrs old, Copenhagen</Card.Text>
-            <a href="#" className="btn-primary">
-              See More
-            </a>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.pexels.com/photos/3779760/pexels-photo-3779760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <Card.Body>
-            <Card.Title>Max</Card.Title>
-            <Card.Text>BSC in Finance, CBS, 25yrs old, Copenhagen</Card.Text>
-            <a href="#" className="btn-primary">
-              See More
-            </a>
-          </Card.Body>
-        </Card>
-      </Cards>
+      <SOptions>
+        <select class="select" data-mdb-filter="true">
+          <option value="1"> Resarch Topic</option>
+          <option value="2"></option>
+          <option value="3"></option>
+        </select>
+        <select class="select" data-mdb-filter="true">
+          <option value="1"> University</option>
+          <option value="2">Copenhagen Business School</option>
+          <option value="3">IT University of Copenhagen</option>
+          University{" "}
+        </select>
+        <select class="select" data-mdb-filter="true">
+          <option value="1">Programme</option>
+          <option value="2">Finance</option>
+          <option value="3">International Business</option>
+          <option value="3">Digitalization</option>
+          <option value="3">Accounting</option>
+          <option value="3">Strategy and Innovation</option>
+          <option value="3">Communication</option>
+        </select>
+        <select class="select" data-mdb-filter="true">
+          <option value="1">Degree</option>
+          <option value="3">Master</option>
+          <option value="3">Bachelor</option>
+        </select>
+        <select class="select" data-mdb-filter="true">
+          <option value="1">Language</option>
+          <option value="3">English</option>
+          <option value="3">Danish</option>
+        </select>
+        <button className="searchBtn">Search</button>
+      </SOptions>
+      <Database />
     </SHomePage>
   );
-};
-};
-
+}};
 
 const mapStateToProps = (state) => ({
-  user: state.user,
-});
-
-const mapActionsToProps = { logoutUser };
-
-HomePage.propTypes = {
-  logoutUser: PropTypes.func.isRequired
-};
-
-export default connect(mapStateToProps, mapActionsToProps)(HomePage);
+    user: state.user,
+  });
+  
+  const mapActionsToProps = { logoutUser };
+  
+  HomePage.propTypes = {
+    logoutUser: PropTypes.func.isRequired
+  };
+  
+  export default connect(mapStateToProps, mapActionsToProps)(HomePage);
