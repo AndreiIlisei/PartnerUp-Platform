@@ -23,8 +23,6 @@ const OVERLAY_STYLES = {
 function Modal({ open, children, onClose }) {
     if (!open) return null 
 
-    window.location.href = "/login"
-
   return ReactDom.createPortal(
     <>
       <div>
@@ -40,3 +38,4 @@ function Modal({ open, children, onClose }) {
 }
 
 export default Modal;
+

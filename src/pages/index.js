@@ -25,9 +25,7 @@ function Home() {
       <Navbar toggle={toggle} />
       <HeroSection />
       <InfoSection {...homeObjOne} />
-{/*       <InfoSection {...homeObjTwo} /> */}
       <Services />
-      {/* <InfoSection {...homeObjThree} /> */}
       <Footer />
     </>
   );

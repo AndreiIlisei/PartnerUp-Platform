@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import withStyles from '@material-ui/core/styles/withStyles'
-import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { Typography, TextField } from "@material-ui/core";
 import "./form.css";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 //Redux Stuff
 import { connect } from "react-redux";
 import { signupUser } from "../../redux/actions/userActions";
 
-const styles = {
+const styles = { 
   customError: {
     color: "red",
     fontSize: "0.8rem",
@@ -105,7 +103,7 @@ class Signup extends Component {
             type="text"
             name="handle"
             className="form-input"
-            placeholder="Enter your username"
+            placeholder="Enter your UserName"
             value={this.state.handle}
             onChange={this.handleChange}
             helperText={errors.handle}

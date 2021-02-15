@@ -19,6 +19,11 @@ export const InfoWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    height: 430px;
+  }
+
 `;
 
 export const InfoRow = styled.div`
@@ -99,4 +104,8 @@ export const Img = styled.img`
   margin-right: 0;
   margin-left: 10px;
   padding-right: 0;
+
+  @media screen and (max-width: 768px) {
+      display: none;
+    }
 `;

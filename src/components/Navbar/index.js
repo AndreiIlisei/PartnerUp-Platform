@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -14,10 +13,6 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
-import SignIn from "../SignIn/index";
-import Modal from "../SignIn/Modal";
-import Login from "../SignIn/Login";
-import Signup from "../SignIn/signup";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -38,19 +33,19 @@ const Navbar = ({ toggle }) => {
     scroll.scrollToTop();
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
+            
             <NavLogo onClick={toggleHome} to="/">
               PartnerUp
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
+
             <NavMenu>
               <NavItem>
                 <NavLinks
@@ -64,18 +59,7 @@ const Navbar = ({ toggle }) => {
                   About
                 </NavLinks>
               </NavItem>
-              {/*      <NavItem>
-                <NavLinks
-                  to='discover'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Discover
-                </NavLinks>
-              </NavItem> */}
+
               <NavItem>
                 <NavLinks
                   to="services"
@@ -88,6 +72,7 @@ const Navbar = ({ toggle }) => {
                   Services
                 </NavLinks>
               </NavItem>
+
               <NavItem>
                 <NavLinks
                   onClick={() => (window.location.href = "signup")}
@@ -101,9 +86,10 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
             </NavMenu>
+
             <NavBtn>
               <NavBtnLink
-                onClick={() => (window.location.href = "login")}
+                onClick={() => (window.location.href = "/login")}
                 smooth={true}
                 duration={500}
                 spy={true}
@@ -113,6 +99,7 @@ const Navbar = ({ toggle }) => {
                 Sign In
               </NavBtnLink>
             </NavBtn>
+
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
@@ -121,3 +108,19 @@ const Navbar = ({ toggle }) => {
 };
 
 export default Navbar;
+
+
+// <MuiLink
+//                 component={Link}
+//                 to={`/users/${handle}`}
+//                 color="primary"
+//                 variant="h5"
+//               >
+//                 @{handle}
+//               </MuiLink>
+
+
+// <NavBtnLink onClick={() => setIsOpen(true)} component={Link} to="/login">Sign In</NavBtnLink>
+// <Modal open={isOpen} onClose={() => setIsOpen(false)}> 
+//   <Login/>
+// </Modal>
