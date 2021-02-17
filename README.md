@@ -6,6 +6,7 @@ Main features
 ➡ Authentication
 ➡ User profiles & profile images  
 ➡ Edit personal profile & change or add profile pictures
+➡ NodeJs
 
 ➡ ReactJs- Interface (Frontend)
 ➡ Firebase/Redux (Backend)
