@@ -1,3 +1,18 @@
+PartnerUp, is a platform that was developed during my course in Tech Labs Digital Sharper. There together with my team mates we can with the idea of a web app that has the purpose of helping students to find their thesis partners based on similar interests and ambition levels so the thesis writing process is more enjoyable and successful. 
+
+The main features of the app are authentication, registration, user profiles, edit of account details and extra features that I will be trying to implement like search engine, posts (likes and comments), interactive chat, friends list and their statuses, notifications (friend requests), messages notifications.
+
+Main features
+➡ Authentication
+➡ User profiles & profile images  
+➡ Edit personal profile & change or add profile pictures
+
+➡ ReactJs- Interface (Frontend)
+➡ Firebase/Redux (Backend)
+➡ Firebase DataStore- Database
+
+You can check this link to see a video of the platform: https://www.behance.net/gallery/113658169/PartnerUp
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
