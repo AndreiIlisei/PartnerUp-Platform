@@ -9,7 +9,7 @@ Main features
 ➡ NodeJs
 
 ➡ ReactJs- Interface (Frontend)
-➡ Firebase/Redux (Backend)
+➡ Express NodeJs
 ➡ Firebase DataStore- Database
 
 You can check this link to see a video of the platform: https://www.behance.net/gallery/113658169/PartnerUp
